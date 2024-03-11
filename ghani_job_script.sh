@@ -13,3 +13,5 @@
 #SBATCH --time=1:00:00               
 
 module add languages/anaconda3/2020-3.8.5
+
+mpiexec -n 3 LebowlLasher_mpi4py_1.py

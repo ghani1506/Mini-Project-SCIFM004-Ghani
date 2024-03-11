@@ -12,3 +12,4 @@
 #SBATCH --cpus-per-task=1            
 #SBATCH --time=1:00:00               
 
+module add languages/anaconda3/2020-3.8.5

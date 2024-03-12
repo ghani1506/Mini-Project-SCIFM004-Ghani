@@ -289,9 +289,9 @@ def main(program, int nsteps, nmax, temp, pflag, int threads=3):
     initial = openmp.omp_get_wtime()
     for it in prange(1,nsteps+1, nogil=True, num_threads=threads):
         with gil:
-        ratio[it] = MC_step(lattice,temp,nmax)
-        energy[it] = all_energy(lattice,nmax)
-        order[it] = get_order(lattice,nmax)
+        	ratio[it] = MC_step(lattice,temp,nmax)
+        	energy[it] = all_energy(lattice,nmax)
+        	order[it] = get_order(lattice,nmax)
     final = openmp.omp_get_wtime()
     runtime = final-initial
     

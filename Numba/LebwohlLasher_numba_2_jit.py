@@ -131,7 +131,7 @@ def savedat(arr,nsteps,Ts,runtime,ratio,energy,order,nmax):
         print("   {:05d}    {:6.4f} {:12.4f}  {:6.4f} ".format(i,ratio[i],energy[i],order[i]),file=FileOut)
     FileOut.close()
 #=======================================================================
-@jit(nopython=True)
+@jit(nopython=True) # Added @jit here
 def one_energy(arr,ix,iy,nmax):
     """
     Arguments:
@@ -166,7 +166,7 @@ def one_energy(arr,ix,iy,nmax):
     en += 0.5*(1.0 - 3.0*np.cos(ang)**2)
     return en
 #=======================================================================
-@jit(nopython=True)
+@jit(nopython=True) # Added @jit here
 def all_energy(arr,nmax):
     """
     Arguments:

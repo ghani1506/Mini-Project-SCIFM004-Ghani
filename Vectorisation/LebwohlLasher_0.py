@@ -203,7 +203,7 @@ def get_order(arr,nmax):
             for i in range(nmax):
                 for j in range(nmax):
                     Qab[a,b] += 3*lab[a,i,j]*lab[b,i,j] - delta[a,b]
-    Qab = Qab/(2*nmax**2)
+    Qab = Qab/(2*nmax**2) # Changed the formula
     eigenvalues,eigenvectors = np.linalg.eig(Qab)
     return eigenvalues.max()
 #=======================================================================
@@ -252,7 +252,7 @@ def MC_step(arr,Ts,nmax):
                     accept += 1
                 else:
                     arr[ix,iy] -= ang
-    return accept/(nmax**2)
+    return accept/(nmax**2) # Changed the formula
 #=======================================================================
 def main(program, nsteps, nmax, temp, pflag):
     """

@@ -151,6 +151,8 @@ def one_energy(arr,ix,iy,nmax):
 # Add together the 4 neighbour contributions
 # to the energy
     
+    #Modified the formula below
+	
     ang1 = arr[ix,iy]-arr[ixp,iy]
     ang2 = arr[ix,iy]-arr[ixm,iy] 
     ang3 = arr[ix,iy]-arr[ix,iyp]

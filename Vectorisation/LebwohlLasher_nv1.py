@@ -150,7 +150,7 @@ def one_energy(arr,ix,iy,nmax):
 #
 # Add together the 4 neighbour contributions
 # to the energy
-    
+    # Modified the formula 
     ang1 = arr[ix,iy]-arr[ixp,iy]
     ang2 = arr[ix,iy]-arr[ixm,iy] 
     ang3 = arr[ix,iy]-arr[ix,iyp]
@@ -200,7 +200,7 @@ def get_order(arr,nmax):
             for i in range(nmax):
                 for j in range(nmax):
                     Qab[a,b] += 3*lab[a,i,j]*lab[b,i,j] - delta[a,b]
-    Qab = Qab/(2*nmax**2)
+    Qab = Qab/(2*nmax**2) #Changed to nmaxx**2
     eigenvalues,eigenvectors = np.linalg.eig(Qab)
     return eigenvalues.max()
 #=======================================================================

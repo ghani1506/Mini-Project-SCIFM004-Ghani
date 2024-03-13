@@ -1,6 +1,6 @@
 import sys
 from LebwohlLasher_cython_cdef import main
-    
+#Amended this part    
 if int(len(sys.argv)) == 5:
     PROGNAME = sys.argv[0]
     ITERATIONS = int(sys.argv[1])

@@ -21,6 +21,7 @@ domains alternate between old data and new data.
 
 SH 16-Oct-23
 """
+#Importing os for 3 threads
 import os
 os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
@@ -281,6 +282,8 @@ def main(program, nsteps, nmax, temp, pflag):
       This is the main function running the Lebwohl-Lasher simulation.
     Returns:
       NULL
+    
+    #Made amendement here
     """
     comm = MPI.COMM_WORLD
     taskid = comm.Get_rank()

@@ -21,6 +21,7 @@ domains alternate between old data and new data.
 
 SH 16-Oct-23
 """
+# Importing os for 2 threads
 import os
 os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
@@ -282,6 +283,8 @@ def main(program, nsteps, nmax, temp, pflag):
     Returns:
       NULL
     """
+# Made amendment to this part
+	
     comm = MPI.COMM_WORLD
     taskid = comm.Get_rank()
     numtasks = comm.Get_size()

@@ -21,6 +21,7 @@ domains alternate between old data and new data.
 
 SH 16-Oct-23
 """
+#Imported cython and openmp
 
 import sys
 import time
@@ -131,6 +132,7 @@ def savedat(arr,nsteps,Ts,runtime,ratio,energy,order,nmax):
         print("   {:05d}    {:6.4f} {:12.4f}  {:6.4f} ".format(i,ratio[i],energy[i],order[i]),file=FileOut)
     FileOut.close()
 #=======================================================================
+#Added cdef to the variables
 def one_energy(arr,ix,iy,nmax):
     """
     Arguments:
@@ -165,6 +167,7 @@ def one_energy(arr,ix,iy,nmax):
     en += 0.5*(1.0 - 3.0*np.cos(ang)**2)
     return en
 #=======================================================================
+#Added cdef to the variables
 def all_energy(arr,nmax):
     """
     Arguments:
@@ -182,6 +185,7 @@ def all_energy(arr,nmax):
             enall += one_energy(arr,i,j,nmax)
     return enall
 #=======================================================================
+#Added cdef to the variables
 def get_order(arr,nmax):
     """
     Arguments:
@@ -210,6 +214,7 @@ def get_order(arr,nmax):
     eigenvalues,eigenvectors = np.linalg.eig(Qab)
     return eigenvalues.max()
 #=======================================================================
+#Added cdef to the variables
 def MC_step(arr,Ts,nmax):
     """
     Arguments:
@@ -257,6 +262,7 @@ def MC_step(arr,Ts,nmax):
                     arr[ix,iy] -= ang
     return accept/(nmax*nmax)
 #=======================================================================
+#Added cdef to the variables
 def main(program, nsteps, nmax, temp, pflag):
     """
     Arguments:
